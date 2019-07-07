@@ -8,5 +8,6 @@ public class TestContorller {
 		ApplicationContext appCon = new ClassPathXmlApplicationContext("applicationContext.xml");
 		UserController uc = (UserController) appCon.getBean("userController");
 		uc.test();
+		System.out.println("--------------");
 	}
 }
