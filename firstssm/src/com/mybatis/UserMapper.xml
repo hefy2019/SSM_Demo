@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- com.dao.UserDao对应Dao接口 -->
+<!-- <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd"> -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Configuration 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.UserDao">
+	<!-- 查询用户信息，id的值对应dao的接口方法 -->
+	<select id="selectUserByUname" resultType="com.po.MyUser"
+	parameterType="com.po.MyUser">
+		select * from user where 1=1
+		<if test="uname!=null and uname!=''">
+			and uname like concat('%',#{uname},'%')
+		</if>
+	</select>
+</mapper>
